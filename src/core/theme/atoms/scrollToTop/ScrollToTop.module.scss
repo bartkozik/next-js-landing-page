@@ -1,0 +1,37 @@
+@use '@/core/theme/index' as *;
+
+.scrollButton {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: $color-button-primary-gradient;
+  color: $color-full-white;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+  @include flex-center;
+  animation: pulse 1.5s infinite ease-in-out;
+  box-shadow: 0 0 19px $color-primary;
+}
+
+.icon {
+  font-size: 18px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

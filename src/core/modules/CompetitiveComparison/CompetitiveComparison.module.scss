@@ -1,0 +1,33 @@
+@use '@/core/theme/index' as *;
+
+.root {
+  @include flex-container(flex-start, center, column);
+  width: 100%;
+  height: 100%;
+  padding-top: 83px;
+
+  @include screen-max(430px) {
+    padding-top: 50px;
+  }
+}
+
+.title {
+  @include font(33px, 300, $color-text-navbar);
+  margin-bottom: 49px;
+
+  @include screen-max(430px) {
+    font-size: 28px;
+  }
+}
+
+.subsectionTitle {
+  margin: 108px 0 0 0;
+  @include font(24px, 300, $color-text-navbar);
+
+  @include screen-max(768px) {
+    font-size: 20px;
+    text-align: center;
+    padding: 0 20px;
+    margin: 40px 0 50px 0;
+  }
+}

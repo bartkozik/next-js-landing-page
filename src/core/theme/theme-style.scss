@@ -1,0 +1,41 @@
+@use 'index.scss' as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  scroll-behavior: smooth;
+  min-height: 100vh;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background-color: $color-bg;
+  overflow-y: scroll;
+  font-family: var(--font-poppins), sans-serif;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.legal-pages {
+  @include flex-container(center, center, column, $gap: 40px);
+  width: 100%;
+  padding: 30px 40px;
+
+  .logo {
+    width: 200px;
+  }
+}
+
+.legal-content {
+  @include flex-container(center, flex-start, column, $gap: 20px);
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-poppins), sans-serif;
+}

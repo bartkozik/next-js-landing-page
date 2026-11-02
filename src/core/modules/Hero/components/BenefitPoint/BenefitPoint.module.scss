@@ -1,0 +1,58 @@
+@use '@/core/theme/index' as *;
+
+.root {
+  @include flex-container(center, center, column);
+  max-width: 330px;
+  text-align: left;
+  padding-top: 10px;
+}
+
+.circle {
+  width: 215px;
+  height: 215px;
+  border-radius: 50%;
+  background: $color-full-white;
+  @include flex-center;
+  margin-bottom: 52px;
+  box-shadow: 0 4px 8px $color-main-shadow;
+  z-index: 3;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  @include screen-max(430px) {
+    width: 137.5px;
+    height: 137.5px;
+  }
+}
+
+.bulletsWrapper {
+  @include flex-container(center, flex-start, column);
+  width: 100%;
+}
+
+.area {
+  @include font(17px, 500, $color-text-primary);
+  margin-bottom: 12px;
+
+  @include screen-max(430px) {
+    font-size: 15px;
+  }
+}
+
+.bullets {
+  list-style-type: disc;
+  padding-left: 20px;
+  @include font(15px, 300, $color-text-primary);
+
+  li {
+    margin-bottom: 4px;
+  }
+
+  @include screen-max(430px) {
+    font-size: 13px;
+  }
+}

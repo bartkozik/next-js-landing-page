@@ -1,0 +1,220 @@
+@use '@/core/theme/index' as *;
+
+@mixin bottom-divider {
+  content: '';
+  position: absolute;
+  left: 23.5px;
+  right: 23.5px;
+  bottom: 0;
+  height: 1px;
+  background: $color-secondary;
+}
+
+@mixin epoca-cell-base {
+  width: $card-width;
+  background: $color-full-white;
+  @include font(14px, 300, $color-text-navbar);
+}
+
+@mixin cell-style {
+  border-bottom: none !important;
+  padding-left: 23.5px !important;
+  padding-right: 23.5px !important;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  box-sizing: border-box;
+  position: relative;
+}
+
+@mixin text-left-reset {
+  p,
+  span,
+  div {
+    margin: 0;
+  }
+
+  *,
+  *::before,
+  *::after {
+    text-align: left !important;
+  }
+}
+
+.root {
+  width: 100%;
+
+  @include screen-min(1040px) {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+  th,
+  td {
+    vertical-align: middle;
+    border-bottom: 1px solid $color-border;
+    padding: 12px 0;
+    white-space: pre-line;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  @include screen-max(1041px) {
+    display: none;
+  }
+}
+
+.logo {
+  width: 95px;
+  height: 29px;
+}
+
+.logoWithMargin {
+  margin-left: 80px;
+}
+
+.stickyBlank {
+  width: 260px;
+  border-bottom: none;
+}
+
+.rowLabel {
+  width: 233px;
+  @include font(12px, 500, $color-text-navbar);
+  padding-right: 42px;
+}
+
+$card-width: 254px;
+
+.epocaCard {
+  height: 100px;
+}
+
+.epocaCard,
+.epocaCardCell {
+  @include epoca-cell-base;
+  @include text-left-reset;
+}
+
+.epocaCard {
+  border-bottom: none !important;
+  border-radius: 8px 8px 0 0;
+  box-sizing: border-box;
+  position: relative;
+
+  &:after {
+    @include bottom-divider;
+  }
+}
+
+.epocaCardCell {
+  @include cell-style;
+  text-align: left;
+}
+
+.bottomBorder::after {
+  @include bottom-divider;
+}
+
+.bottomRadius {
+  border-radius: 0 0 8px 8px;
+  padding: 23.5px !important;
+}
+
+.header {
+  text-align: left;
+  @include font(15px, 500, $color-primary);
+  padding-left: 23px !important;
+}
+
+.cell {
+  padding-left: 23.5px !important;
+  padding-right: 23.5px !important;
+  padding-right: 24px !important ;
+  @include font(14px, 300, $color-text-navbar);
+}
+
+//mobile
+
+.mobileTableContainer {
+  @include screen-min(1040px) {
+    display: none;
+  }
+}
+
+.mobileTable {
+  width: 95%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.slide {
+  @include flex-center;
+  min-width: 300px;
+  padding: 20px 0;
+}
+
+.epocaSliderColumn table {
+  box-shadow: 0 6px 21px $color-gray;
+}
+
+.mobileHeader {
+  @include flex-center;
+  height: 100px;
+  width: 100%;
+  background: $color-secondary-light;
+  @include font(15px, 500, $color-primary);
+  border-bottom: none !important;
+  border-radius: 8px 8px 0 0;
+  box-sizing: border-box;
+  position: relative;
+
+  &::after {
+    @include bottom-divider;
+  }
+}
+
+.mobileCell {
+  @include flex-container(center, center, column, $gap: 10px);
+  height: 130px;
+  @include font(14px, 300, $color-text-navbar);
+  background: $color-secondary-light;
+  @include cell-style;
+  text-align: center;
+  @include text-left-reset;
+
+  span {
+    @include font(14px, 500);
+  }
+}
+
+.epocaColumn {
+  background: $color-full-white;
+  span {
+    color: $color-primary;
+  }
+}
+
+.mobileTable tr:last-child td {
+  border-radius: 0 0 8px 8px;
+}
+
+.mobileBottomBorder::after {
+  @include bottom-divider;
+}
+
+.swipeButtons {
+  margin-top: 30px;
+
+  @include screen-min(1040px) {
+    display: none;
+  }
+}

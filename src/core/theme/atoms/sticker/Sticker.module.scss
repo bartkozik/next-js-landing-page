@@ -1,0 +1,37 @@
+@use '@/core/theme/index' as common;
+
+.root {
+  @include common.flex-container(space-between, center, $gap: 7.32px);
+  width: 100%;
+  padding: 9.5px 15px 9.5px 10px;
+  max-height: 36.5px;
+  color: common.$color-primary;
+  background-color: common.$color-secondary;
+  border-radius: 8px;
+  opacity: 0.9;
+
+  @include common.screen-max(1092px) {
+    padding: 4.5px 7.5px 4.5px 5px;
+  }
+}
+
+.text {
+  @include common.flex-center;
+  @include common.font(12px, 500, common.$color-primary);
+  min-width: fit-content;
+  white-space: nowrap;
+
+  @include common.screen-max(1092px) {
+    font-size: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    display: block;
+  }
+}
+
+.icon {
+  max-width: 13px;
+  max-height: 13px;
+}

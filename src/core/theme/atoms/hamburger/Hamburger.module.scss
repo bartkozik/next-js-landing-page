@@ -1,0 +1,45 @@
+@use '@/core/theme/index' as *;
+
+.root {
+  @include flex-center;
+}
+
+.burger {
+  width: 40px;
+  height: 40px;
+  background: $color-secondary;
+  border-radius: 8px;
+  cursor: pointer;
+  @include flex-container(center, center, column);
+  transition: transform ease-in-out 0.5s;
+}
+
+.change,
+.burger:hover {
+  opacity: 0.8;
+}
+
+.bar1 {
+  margin-bottom: 8px;
+}
+
+.bar1,
+.bar2 {
+  width: 20px;
+  height: 2px;
+  background-color: $color-primary;
+  transition: transform 0.3s;
+}
+
+.change .bar1 {
+  transform: rotate(45deg);
+  margin-bottom: -2.2px;
+  width: 21px;
+  background-color: $color-primary;
+}
+
+.change .bar2 {
+  transform: rotate(-45deg);
+  width: 21px;
+  background-color: $color-primary;
+}

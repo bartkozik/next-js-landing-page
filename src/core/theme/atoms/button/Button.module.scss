@@ -1,0 +1,61 @@
+@use '@/core/theme/index' as *;
+@use 'sass:color';
+
+@mixin btn-hover($color) {
+  &:hover:not(:disabled) {
+    background-color: color.adjust($color, $lightness: -15%);
+  }
+}
+
+.root {
+  @include font(14px, 500);
+  @include flex-container(center, center, row, true);
+  position: relative;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  white-space: nowrap;
+  padding: 10px 24px;
+  color: $color-white;
+  text-decoration: none;
+  text-align: center;
+  height: 40px;
+  min-width: fit-content;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+
+  svg {
+    margin-right: 7.5px;
+  }
+
+  &.maxWidth {
+    width: 100%;
+  }
+}
+
+.withIcon {
+  padding: 10px 24px 10px 18px;
+}
+
+.primary {
+  color: $color-white;
+  background: $color-button-primary-gradient;
+
+  svg path {
+    fill: $color-white;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.loader {
+  top: 50%;
+  transform: translateY(-50%);
+}

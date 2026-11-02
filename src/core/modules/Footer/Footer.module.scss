@@ -1,0 +1,115 @@
+@use '@/core/theme/index' as *;
+
+.root {
+  @include flex-container(center, center, column);
+  width: 100%;
+  background-color: $color-footer-bg;
+  color: $color-full-white;
+  padding: 87px 40px 65px;
+}
+
+.top {
+  @include flex-container(space-between);
+  width: 100%;
+  max-width: 1000px;
+  flex-wrap: wrap;
+
+  margin: 0 auto;
+  gap: 32px;
+  cursor: pointer;
+
+  @include screen-max(850px) {
+    @include flex-container(flex-end, flex-start, column, $gap: 60px);
+  }
+}
+
+.left {
+  position: relative;
+}
+
+.logo {
+  width: 228px;
+  height: 70px;
+}
+
+.powered {
+  position: absolute;
+  white-space: nowrap;
+  top: 57px;
+  left: 82px;
+  letter-spacing: 0.5px;
+  @include font(12px, 600);
+  @include gradient-font;
+}
+
+.right {
+  width: 100%;
+  text-align: right;
+  font-size: 14px;
+  color: $color-footer-bg;
+
+  @include screen-max(850px) {
+    padding-left: 20px;
+    text-align: left;
+  }
+}
+
+.email {
+  @include font(33px, 300, $color-full-white);
+  text-decoration: none;
+  margin-bottom: 25px;
+  display: inline-block;
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  @include screen-max(850px) {
+    font-size: 18px;
+  }
+}
+
+.address {
+  @include font(13px, 300, $color-full-white);
+  line-height: 1.6;
+  cursor: default;
+}
+
+.bottom {
+  @include flex-container(space-between, center);
+  width: 100%;
+  max-width: 1000px;
+  margin: 48px auto 0;
+  flex-wrap: wrap;
+  gap: 24px;
+  font-size: 12px;
+  padding-left: 20px;
+  color: $color-full-white;
+}
+
+.legal {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  opacity: 0.6;
+}
+
+.link {
+  @include font(12px, 300, $color-full-white);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.linkedin {
+  color: $color-footer-icons;
+  font-size: 20px;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

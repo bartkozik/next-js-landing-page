@@ -1,0 +1,17 @@
+@use 'common-colors' as color;
+@use 'common-flex' as flex;
+@use 'common-responsive' as responsive;
+
+@mixin font($size: 14px, $weight: 400, $font-color: color.$color-text-primary) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $font-color;
+}
+
+@mixin gradient-font {
+  background: color.$color-icons-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}

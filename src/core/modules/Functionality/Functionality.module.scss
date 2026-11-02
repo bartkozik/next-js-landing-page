@@ -1,0 +1,21 @@
+@use '@/core/theme/index' as *;
+
+.root {
+  @include flex-container(center, center, column);
+  width: 100%;
+  background-color: $color-full-white;
+  margin-top: 133px;
+  padding: 83px 0 100px 0;
+
+  @include screen-max(430px) {
+    padding: 50px 0;
+  }
+}
+
+.title {
+  @include font(33px, 300, $color-text-navbar);
+
+  @include screen-max(430px) {
+    font-size: 28px;
+  }
+}

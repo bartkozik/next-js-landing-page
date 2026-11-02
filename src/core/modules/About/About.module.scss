@@ -1,0 +1,147 @@
+@use '@/core/theme/index' as *;
+
+.root {
+  @include flex-container(flex-start, center, column);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  min-height: 1000px;
+  padding: 100px 0;
+  background-color: $color-full-white;
+
+  @include screen-max(1080px) {
+    padding: 100px 50px 0px 50px;
+  }
+
+  @include screen-max(430px) {
+    padding: 50px 30px 0px 30px;
+  }
+}
+
+.bg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 800px;
+  max-width: 1440px;
+  background: url('/images/comparisonBackground.png') bottom center / cover no-repeat;
+  pointer-events: none;
+  z-index: 0;
+
+  @include screen-max(1080px) {
+    position: relative;
+    width: 100vw;
+    height: 470px;
+    margin-left: 50%;
+  }
+
+  @include screen-max(710px) {
+    height: 300px;
+  }
+
+  @include screen-max(500px) {
+    height: 220px;
+  }
+}
+
+.parallaxBackground {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 1440px;
+  height: 800px;
+  background: url('/images/comparisonBackground.png') bottom center / cover no-repeat;
+  pointer-events: none;
+  z-index: 1;
+  will-change: transform;
+  opacity: 0;
+  pointer-events: none;
+
+  @include screen-max(1080px) {
+    display: none;
+  }
+}
+
+.parallaxBackgroundVisible {
+  opacity: 1;
+  pointer-events: auto;
+
+  @include screen-max(1080px) {
+    display: none;
+  }
+}
+
+.backgroundAnimation {
+  transition:
+    opacity 1s ease-in-out,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.heading {
+  @include font(33px, 300, $color-text-primary);
+  margin-bottom: 38px;
+  z-index: 99;
+
+  @include screen-max(430px) {
+    font-size: 28px;
+  }
+}
+
+.content {
+  @include flex-container(space-between, flex-start, $gap: 110px);
+  z-index: 1;
+  position: relative;
+
+  @include screen-max(2300px) {
+    &::before {
+      content: '';
+      position: absolute;
+      top: -210px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      height: 530px;
+      pointer-events: none;
+      opacity: 1;
+      background: $color-full-white-vertical-gradient;
+      z-index: 0;
+    }
+  }
+
+  @include screen-max(1080px) {
+    @include flex-container(space-between, flex-start, column, $gap: 30px);
+  }
+}
+
+.leftColumn {
+  @include flex-container;
+  max-width: 422px;
+  padding: 10px 0;
+  @include font(18px, 300, $color-text-primary);
+  z-index: 1;
+
+  @include screen-max(1080px) {
+    max-width: 100%;
+    text-align: center;
+    background: transparent;
+  }
+
+  @include screen-max(430px) {
+    text-align: left;
+    font-size: 16px;
+  }
+}
+
+.rightColumn {
+  @include flex-container;
+  max-width: 488px;
+  height: 3330px;
+  z-index: 1;
+
+  @include screen-max(1080px) {
+    height: auto;
+    min-width: 100%;
+  }
+}

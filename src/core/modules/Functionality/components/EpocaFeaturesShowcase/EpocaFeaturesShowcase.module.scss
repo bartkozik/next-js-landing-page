@@ -1,0 +1,96 @@
+@use '@/core/theme/index' as *;
+
+.root {
+  @include flex-container(center, flex-start, column, $gap: 80px);
+  max-width: 1000px;
+  padding: 60px 20px;
+  overflow: hidden;
+
+  @include screen-max(950px) {
+    margin-top: 60px;
+    padding: 0px 30px;
+  }
+}
+
+.row {
+  @include flex-container(space-between, center);
+  flex-wrap: wrap;
+  gap: 40px;
+
+  @include screen-max(768px) {
+    @include flex-container(center, center, column, $gap: 30px);
+    width: 100%;
+  }
+}
+
+.imageContainer,
+.textContainer {
+  flex: 1 1 45%;
+  max-width: 48%;
+
+  @include screen-max(768px) {
+    max-width: 100%;
+  }
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background-color: inherit;
+}
+
+.rolesImg {
+  max-width: 258px;
+  max-height: 325px;
+
+  @include screen-min(768px) {
+    margin-left: 80px;
+  }
+}
+
+.left {
+  order: 1;
+}
+
+.right {
+  order: 2;
+}
+
+.title {
+  @include font(17px, 500, $color-text-navbar);
+  margin-bottom: 16px;
+
+  @include screen-max(768px) {
+    font-size: 15px;
+    text-align: center;
+  }
+}
+
+.bullets {
+  list-style: disc;
+  padding-left: 30px;
+
+  li {
+    margin-bottom: 8px;
+    @include font(15px, 300, $color-text-navbar);
+  }
+}
+
+.subbullets {
+  list-style: circle;
+  padding-left: 24px;
+  margin-top: 4px;
+
+  li {
+    @include font(14px, 300, $color-text-navbar);
+    margin-bottom: 4px;
+  }
+}
+
+@include screen-max(768px) {
+  .left,
+  .right {
+    order: 0;
+  }
+}

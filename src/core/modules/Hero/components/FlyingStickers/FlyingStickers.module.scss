@@ -1,0 +1,7 @@
+@use '@/core/theme/index' as *;
+
+.floatingStickers {
+  position: absolute;
+  top: 0px;
+  z-index: 2;
+}

@@ -1,0 +1,20 @@
+@use '@/core/theme/index' as *;
+
+.root {
+  @include flex-center;
+  object-fit: contain;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.regular {
+  width: 100%;
+  height: auto;
+}
+
+.small {
+  max-width: 115px;
+  max-height: 35px;
+}

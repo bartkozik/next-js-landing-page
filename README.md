@@ -1,52 +1,45 @@
-# TimeTracker App – Landing Page (Public Project)
+# EPOCA — Next.js landing page
 
-**Note:** This is a portfolio landing page developed for Epoca. No confidential code or data is shared in this repository.
+A responsive marketing website for EPOCA, a time-tracking and reporting product. It presents the product through animated sections, feature showcases, comparisons and presentation-booking calls to action.
 
-## 🧭 Project Overview
+## My role
 
-This landing page supports the marketing and onboarding funnel of the TimeTracker App platform. Built using the latest features of **Next.js 14 (App Router)**, the site emphasizes responsiveness, animation, and developer performance. The design was fully aligned with approved Figma mockups.
+I was the sole developer of this landing page, including its responsive interface, reusable components, animations and frontend implementation.
 
-## 👨‍💻 My Role
+## Features
 
-I led the frontend development of this standalone landing page. Responsibilities included:
+- Responsive hero with animated stickers and mobile carousels.
+- Product feature showcases and comparison tables.
+- FAQ, testimonial section and configurable booking links.
+- Shared navigation, buttons, scroll controls and viewport hooks.
+- App Router pages with SEO metadata and social previews.
 
-- Setting up the **Next.js 14 App Router** project from scratch
-- Implementing all UI components in alignment with Figma designs
-- Proposing and implementing **fully responsive layouts**, as mobile views were not included in the original design
-- Adding **scroll-triggered animations** using `framer-motion`
-- Building **custom layout logic** and positioning for decorative stickers
-- Ensuring **accessibility, responsiveness**, and cross-browser compatibility
-- Managing assets, fonts, and metadata for **SEO and performance**
+## Stack
 
-Additionally, I configured **CI/CD** using GitLab pipelines to deploy Docker images to AWS ECR with OIDC authentication.
+Next.js 15.3.6 · React 19 · TypeScript · SCSS modules · Framer Motion · Swiper · React Transition Group · React Icons.
 
-## 🛠️ Tech Stack
+The original npm manifest and lockfile support the local setup and Docker build.
 
-### Framework
-- **Next.js 14** (App Router)
-- **React 18**
-- **TypeScript**
+## Run locally
 
-### Styling & Animation
-- **SCSS Modules** – modular styles with custom theme support
-- **Framer Motion** – scroll-based and element animations
-- **clsx**, **custom utility hooks**
+Use Node.js 22 and npm:
 
-### Tooling & Deployment
-- **pnpm** – package manager
-- **GitLab CI/CD** – deployment to **AWS ECR** via **OIDC**
-- **Prettier**, **ESLint**, **SVGO**
+```sh
+npm ci
+cp .env.example .env.local
+npm run dev
+```
 
-## 🔍 Highlights
+Open `http://localhost:3000`. Booking buttons use `NEXT_PUBLIC_CALENDLY_URL`; leave it blank for local review or configure your own booking URL. The original Google Fonts integration downloads Poppins during the build.
 
-- Pixel-perfect layout based on design specs
-- Custom scroll behavior and animations
-- Sticker rendering logic adapted to screen width and safe zones
-- Fully responsive design with mobile optimizations
-- SEO-ready: semantic HTML, Open Graph tags, optimized metadata
+```sh
+npm run lint
+npm run build
+npm start
+```
 
-## 🧑‍💻 Author
+## Public snapshot
 
-Created by [Bartosz Kozikowski]
+The application code and layout are retained, with customer/contact data and selected screenshots replaced by neutral placeholders. See [source export notes](SOURCE_EXPORT.md) for the exact scope, verification results and dependency limitations.
 
-> Want to learn more about scroll-based animations, App Router patterns, or CI/CD deployment? Let’s talk.
+Related product repositories: [EPOCA frontend](https://github.com/bartkozik/epoca-frontend) · [EPOCA backend](https://github.com/bartkozik/epoca-backend).

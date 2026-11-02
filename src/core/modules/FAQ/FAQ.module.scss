@@ -1,0 +1,86 @@
+@use '@/core/theme/index' as *;
+
+.root {
+  padding: 80px 114px;
+  background-color: $color-full-white;
+  min-height: 850px;
+
+  @include screen-max(992px) {
+    padding: 60px 70px;
+  }
+
+  @include screen-max(768px) {
+    padding: 40px 50px;
+    min-height: 850px;
+  }
+
+  @include screen-max(430px) {
+    padding: 40px;
+    min-height: 850px;
+  }
+}
+
+.title {
+  text-align: center;
+  @include font(33px, 300);
+  margin-bottom: 48px;
+
+  @include screen-max(768px) {
+    font-size: 28px;
+  }
+}
+
+.list {
+  max-width: 800px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+
+.item {
+  border-bottom: 1px solid $color-border;
+  padding: 20px 0;
+  cursor: pointer;
+
+  &:hover {
+    button {
+      color: $color-primary;
+    }
+  }
+}
+
+.firstItem {
+  border-top: 1px solid $color-border;
+}
+
+.question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  @include flex-container(space-between, center);
+  text-align: left;
+  @include font(17px, 500, $color-text-navbar);
+  font-family: var(--font-poppins), sans-serif;
+
+  @include screen-max(430px) {
+    font-size: 15px;
+  }
+}
+
+.answer {
+  margin-top: 12px;
+  @include font(15px, 300);
+  max-width: 90%;
+  line-height: 1.6;
+
+  @include screen-max(430px) {
+    font-size: 13px;
+  }
+}
+
+.icon {
+  color: $color-primary;
+  margin-left: 12px;
+  flex-shrink: 0;
+}

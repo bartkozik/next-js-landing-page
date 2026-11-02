@@ -1,0 +1,164 @@
+@use '@/core/theme/index' as *;
+
+.root {
+  @include flex-container(center, center, column);
+  width: 100%;
+  padding: 0 20px;
+  min-height: 550px;
+  text-align: center;
+  position: relative;
+}
+
+.centerText {
+  @include font(24px, 300);
+  padding: 40px 160px 50px 160px;
+  text-align: center;
+  max-width: 980px;
+  max-height: 180px;
+
+  @include screen-max(768px) {
+    @include font(18px, 400);
+    padding: 40px 30px 50px 30px;
+  }
+
+  @include screen-max(500px) {
+    @include font(14px, 400);
+    padding: 180px 20px;
+  }
+}
+
+.callouts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.callout {
+  position: absolute;
+  @include font(12px, 500, $color-primary);
+  pointer-events: auto;
+
+  &.topLeft {
+    @include flex-container(flex-end, center, column);
+    max-width: 228px;
+    top: 100px;
+    left: 10%;
+    text-align: right;
+
+    img {
+      width: 35px;
+      height: 54px;
+    }
+
+    @include screen-max(768px) {
+      top: 30px;
+      left: 30px;
+    }
+  }
+
+  &.topRight {
+    @include flex-container($gap: 10px);
+    width: fit-content;
+    text-align: left;
+    top: 100px;
+    right: 140px;
+
+    span {
+      padding-top: 10px;
+      max-width: 190px;
+    }
+
+    img {
+      width: 50px;
+      height: 33px;
+    }
+
+    @include screen-max(768px) {
+      top: 140px;
+      right: 30px;
+    }
+
+    @include screen-max(500px) {
+      @include flex-container(center, center, column-reverse, $gap: 10px);
+      top: 130px;
+      right: 30px;
+
+      img {
+        transform: rotate(270deg) scaleY(-1);
+      }
+    }
+  }
+
+  &.bottomLeft {
+    @include flex-container(center, center, $gap: 10px);
+    bottom: 20px;
+    left: 17%;
+    text-align: right;
+
+    span {
+      padding-top: 40px;
+      max-width: 251px;
+    }
+
+    img {
+      width: 30px;
+      height: 40px;
+    }
+
+    @include screen-max(768px) {
+      bottom: 100px;
+      left: 30px;
+    }
+
+    @include screen-max(390px) {
+      @include flex-container(center, center, column-reverse, $gap: 0px);
+      bottom: 40px;
+      left: 30px;
+
+      span {
+        padding-top: 0;
+      }
+    }
+  }
+
+  &.bottomRight {
+    @include flex-container(center, center, $gap: 10px);
+    top: 500px;
+    right: 10%;
+    text-align: left;
+
+    span {
+      padding-top: 50px;
+      max-width: 251px;
+    }
+
+    img {
+      width: 52px;
+      height: 40px;
+    }
+
+    @include screen-max(768px) {
+      bottom: 0px;
+      right: 30px;
+    }
+
+    @include screen-max(390px) {
+      @include flex-container(center, center, column, $gap: 0px);
+      top: 580px;
+      left: 30px;
+
+      span {
+        padding-top: 0;
+      }
+    }
+  }
+
+  @include screen-max(500px) {
+    // img {
+    //   display: none;
+    // }
+    span {
+      text-align: center;
+    }
+  }
+}

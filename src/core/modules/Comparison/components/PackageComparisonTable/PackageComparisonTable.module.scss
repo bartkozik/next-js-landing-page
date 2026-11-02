@@ -1,0 +1,209 @@
+@use '@/core/theme/index' as *;
+
+$card-width: 318px;
+
+@mixin cell-border {
+  content: '';
+  position: absolute;
+  left: 40.5px;
+  right: 40.5px;
+  bottom: 0;
+  height: 1px;
+  background: $color-border;
+}
+
+@mixin cell-header {
+  @include flex-container(center, flex-start, column);
+  height: 112px;
+  padding: 38px 46px 24px 40.5px;
+  background: $color-full-white;
+  box-shadow: 0 6px 21px $color-gray;
+  border-radius: 8px 8px 0 0;
+  text-align: left;
+  position: relative;
+  border-bottom: none !important;
+  position: relative;
+
+  &::after {
+    @include cell-border;
+  }
+}
+
+@mixin basic-cell-style {
+  background-color: $color-full-white;
+  position: relative;
+  border-bottom: none !important;
+}
+
+@mixin basic-table {
+  width: 100%;
+  border-spacing: 0 0;
+
+  th,
+  td {
+    vertical-align: middle;
+    white-space: nowrap;
+    border-bottom: 1px solid $color-border;
+  }
+
+  tr:nth-last-child(2) {
+    th,
+    td {
+      border-bottom: none;
+    }
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+.root {
+  width: 100%;
+
+  @include screen-min(1040px) {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}
+
+.desktopTable {
+  table {
+    @include basic-table;
+  }
+
+  @include screen-max(1041px) {
+    display: none;
+  }
+}
+
+.mobileTable {
+  table {
+    @include basic-table;
+  }
+  @include screen-min(1040px) {
+    display: none;
+  }
+}
+
+.blank {
+  width: $card-width;
+  border-bottom: none;
+}
+
+.gapCol {
+  width: 48px;
+  border-bottom: none !important;
+}
+
+.rowLabel {
+  text-align: left;
+  padding: 0;
+  white-space: pre-line;
+  @include font(12px, 500, $color-text-navbar);
+}
+
+.card {
+  width: $card-width;
+  @include cell-header;
+}
+
+.planTitle {
+  @include font(23px, 300, $color-primary);
+}
+.planSubtitle {
+  @include font(16px, 500, $color-primary);
+}
+
+.basicCardCell,
+.enterpriseCardCell {
+  @include flex-center;
+  width: $card-width;
+  padding: 17px 0;
+  @include basic-cell-style;
+}
+
+.gradientText {
+  @include font(24px, 500);
+  background: $color-icons-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.notLastCell::after {
+  @include cell-border;
+}
+
+.price {
+  z-index: 2;
+  position: relative;
+  @include font(23px, 300, $color-primary);
+  box-shadow: 0 6px 21px $color-gray;
+  padding: 25px 45px 40px 40.5px;
+  text-align: left;
+  background-color: $color-full-white;
+  border-radius: 0 0 8px 8px;
+}
+
+.basicPrice::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.14;
+  background: linear-gradient(180deg, rgba(236, 210, 159, 1) 0%, rgba(236, 210, 159, 0) 100%);
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 6px 21px $color-gray;
+  z-index: 2;
+}
+
+.enterpricePrice {
+  @include font(15px, 500, $color-primary);
+  height: 26px;
+}
+
+.priceEnterprise {
+  @include font(15px, 500, $color-primary);
+  padding: 25px 45px 48px 40.5px;
+}
+
+.disclaimer {
+  padding-left: 317px !important;
+  margin-top: 41px;
+  padding-left: 0;
+
+  p {
+    @include font(13px, 300);
+    max-width: 579px;
+    padding-top: 4px;
+  }
+
+  @include screen-max(1040px) {
+    padding: 0 40px !important;
+  }
+}
+
+//mobile
+
+.swiper {
+  margin-bottom: 40px;
+}
+
+.mobileHeader {
+  width: 100%;
+  @include cell-header;
+}
+
+.mobileCell {
+  @include flex-container(flex-start, center, $gap: 20px);
+  width: 100%;
+  @include basic-cell-style;
+  padding: 17px 43.5px !important;
+}
+
+.cellLabel {
+  @include font(16px, 300);
+  white-space: wrap;
+}
