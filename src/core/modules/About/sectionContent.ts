@@ -45,7 +45,6 @@ export const WHY_EPOCA_SECTIONS: Section[] = [
     ],
   },
 
-  /* 2. On-premise i pełna kontrola nad danymi */
   {
     id: 'on-premise-control',
     title: 'On-premise i pełna kontrola nad danymi',
@@ -90,7 +89,6 @@ export const WHY_EPOCA_SECTIONS: Section[] = [
     ],
   },
 
-  /* 3. Branding i wizerunek kancelarii */
   {
     id: 'branding',
     title: 'Branding i wizerunek kancelarii',
@@ -119,7 +117,6 @@ export const WHY_EPOCA_SECTIONS: Section[] = [
     ],
   },
 
-  /* 4. Prostota i oszczędność czasu */
   {
     id: 'simplicity-speed',
     title: 'Prostota i oszczędność czasu',

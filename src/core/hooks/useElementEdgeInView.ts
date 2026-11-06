@@ -1,9 +1,5 @@
 import { useEffect, useState } from 'react';
 
-/**
- * Hook that returns an object with booleans indicating whether the top and bottom edges
- * of the referenced element are currently inside the viewport.
- */
 export const useElementEdgeInView = (
   ref: React.RefObject<HTMLElement | null>,
 ): { isTopEdgeInView: boolean; isBottomEdgeInView: boolean } => {

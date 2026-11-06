@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: 'Epoca – Monitorowanie czasu pracy',
     description:
       'Zyskaj pełną kontrolę nad czasem pracy zespołu dzięki Epoca – nowoczesnemu narzędziu do raportowania i analizy.',
-    //Change url's before deploy
+    // Replace the placeholder metadata URLs before deployment.
     url: 'https://example.invalid/',
     siteName: 'Epoca',
     images: [
